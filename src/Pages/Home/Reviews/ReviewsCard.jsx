@@ -8,7 +8,7 @@ const ReviewsCard = ({review}) => {
     return (
        <div className="max-w-sm p-6 bg-white rounded-lg shadow-md relative">
       <FaQuoteLeft className="text-4xl text-gray-300 absolute top-4 left-4" />
-      <p className="mt-8 mb-6 text-gray-700">
+      <p className="mt-8 mb-6 ">
        {testimonial}
       </p>
       <hr className="border-dashed border-gray-300 mb-4" />
