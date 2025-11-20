@@ -9,9 +9,9 @@ import { BsArrowUpRightCircleFill } from 'react-icons/bs';
 const Banner = () => {
     return (
         <Carousel 
-        // autoPlay={true}
-        // infiniteLoop={true}
-        // interval={2000}
+        autoPlay={true}
+        infiniteLoop={true}
+        interval={2000}
         >
         <div className='relative  '>
             <img src={bannerImg1} alt="" />
