@@ -15,6 +15,7 @@ const brandLogos = [amazon, amazon_vector, casio, moonstar, randstad, star, star
 
 const Brands = () => {
     return (
+        
        <Swiper
        slidesPerView={4}
        centeredSlides={true}
@@ -23,7 +24,7 @@ const Brands = () => {
        modules={[Autoplay]}
        grabCursor={true}
        autoplay={{
-        delay:2500,
+        delay:1000,
         disableOnInteraction: false,
        }
 

@@ -3,6 +3,14 @@ import Banner from '../Banner/Banner';
 import HowItWorks from '../../../Components/HowItWorks/HowItWorks';
 import OurServices from '../../../Components/OurServices/OurServices';
 import Brands from '../Brands/Brands';
+import Reviews from '../Reviews/Reviews';
+
+
+
+//promise use kore reviews er jonno data anbo
+
+const reviewsPromise = fetch('/Data/reviews.json').then(res => res.json());
+
 
 const Home = () => {
     return (
@@ -16,6 +24,9 @@ const Home = () => {
             </section>
             <section className='py-10'>
                 <Brands></Brands>
+            </section>
+            <section className='py-10'>
+                <Reviews reviewsPromise={reviewsPromise}></Reviews>
             </section>
         </div>
     );
