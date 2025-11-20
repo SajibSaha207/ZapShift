@@ -8,8 +8,8 @@ const OurServices = () => {
                 <h2 className='text-white items-center text-center mt-10 mb-3 font-bold text-2xl'>Our Services</h2>
             <p className='text-white text-center'>Enjoy fast, reliable parcel delivery with real-time tracking and zero hassle. From personal packages to  <br /> business shipments — we deliver on time, every time.</p>
             </div>
-            <div className='grid grid-cols-3'>
-                 <div className="card bg-base-100 shadow-sm p-5 mt-15 ml-10 rounded-xl max-w-[370px] max-h-[300px]  ">
+            <div className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 px-20 justify-items-center' >
+                 <div className="card bg-base-100 shadow-sm p-5 m rounded-xl max-w-[370px]   ">
                     <div className='w-[60px] h-[60px] rounded-full bg-base-300 mx-auto flex items-center justify-center'>
                    <img src={servicelogo} alt="" className='w-[40px] h-[35px] object-contain   '/>
                    </div>
@@ -19,7 +19,7 @@ const OurServices = () => {
 
                    {/* card 2 */}
 
-                    <div className="card bg-[#CAEB66] shadow-sm p-5 mt-15 ml-5 rounded-xl max-w-[370px] max-h-[300px]  ">
+                    <div className="card bg-[#CAEB66] shadow-sm p-4 m rounded-xl max-w-[370px]   ">
                     <div className='w-[60px] h-[60px] rounded-full bg-base-300 mx-auto flex items-center justify-center'>
                    <img src={servicelogo} alt="" className='w-[40px] h-[35px] object-contain   '/>
                    </div>
@@ -29,7 +29,7 @@ const OurServices = () => {
 
                     {/* card 3 */}
 
-                    <div className="card bg-base-100 shadow-sm p-5 mt-15  rounded-xl max-w-[370px] max-h-[300px]  ">
+                    <div className="card bg-base-100 shadow-sm p-5 m rounded-xl max-w-[370px]   ">
                     <div className='w-[60px] h-[60px] rounded-full bg-base-300 mx-auto flex items-center justify-center'>
                    <img src={servicelogo} alt="" className='w-[40px] h-[35px] object-contain   '/>
                    </div>
@@ -39,7 +39,7 @@ const OurServices = () => {
 
                     {/* card 4 */}
 
-                    <div className="card bg-base-100 shadow-sm p-5 mt-5 ml-10 rounded-xl max-w-[370px] max-h-[300px]  ">
+                    <div className="card bg-base-100 shadow-sm p-5  rounded-xl max-w-[370px]   ">
                     <div className='w-[60px] h-[60px] rounded-full bg-base-300 mx-auto flex items-center justify-center'>
                    <img src={servicelogo} alt="" className='w-[40px] h-[35px] object-contain   '/>
                    </div>
@@ -49,7 +49,7 @@ const OurServices = () => {
 
                     {/* card 5 */}
 
-                    <div className="card bg-base-100 shadow-sm p-5 mt-5 ml-5 rounded-xl max-w-[370px] max-h-[300px]  ">
+                    <div className="card bg-base-100 shadow-sm p-5  rounded-xl max-w-[370px]   ">
                     <div className='w-[60px] h-[60px] rounded-full bg-base-300 mx-auto flex items-center justify-center'>
                    <img src={servicelogo} alt="" className='w-[40px] h-[35px] object-contain   '/>
                    </div>
@@ -59,7 +59,7 @@ const OurServices = () => {
 
                     {/* card 6 */}
 
-                    <div className="card bg-base-100 shadow-sm p-5 mt-5  rounded-xl max-w-[370px] max-h-[300px]  ">
+                    <div className="card bg-base-100 shadow-sm p-5  rounded-xl max-w-[370px]   ">
                     <div className='w-[60px] h-[60px] rounded-full bg-base-300 mx-auto flex items-center justify-center'>
                    <img src={servicelogo} alt="" className='w-[40px] h-[35px] object-contain   '/>
                    </div>
