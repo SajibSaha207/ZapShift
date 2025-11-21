@@ -11,7 +11,7 @@ const Banner = () => {
         <Carousel 
         autoPlay={true}
         infiniteLoop={true}
-        interval={2000}
+        interval={1000}
         >
         <div className='relative  '>
             <img src={bannerImg1} alt="" />

@@ -10,6 +10,6 @@ const Logo = () => {
         </div>
        </Link>
     );
-};
+};        
 
 export default Logo;
