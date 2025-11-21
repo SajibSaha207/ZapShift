@@ -25,7 +25,7 @@ const Home = () => {
             <section className='py-10'>
                 <Brands></Brands>
             </section>
-            <section className='py-10'>
+            <section className=''>
                 <Reviews reviewsPromise={reviewsPromise}></Reviews>
             </section>
         </div>

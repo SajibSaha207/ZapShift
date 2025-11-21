@@ -13,11 +13,9 @@ const Reviews = ({reviewsPromise}) => {
     console.log(reviews)
 
     return (
-         <div className='my-24'>
+         <div className=''>
             <div className='text-center mb-24'>
-                <h3 className='text-3xl text-center font-bold my-8'>Review</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium maiores labore ad perferendis sequi repellendus repudiandae illum harum ipsam cum.
-                </p>
+            
                 
                 <Swiper
                 loop={true}

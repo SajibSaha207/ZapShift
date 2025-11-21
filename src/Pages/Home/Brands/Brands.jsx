@@ -13,6 +13,8 @@ import { Autoplay } from 'swiper/modules';
 import livetrackingImg from '../../../assets/live-tracking.png';
 import safedelivarylogo from '../../../assets/safe-delivery.png';
 import locationmerchantlogo from '../../../assets/location-merchant.png';
+import customertopImg from '../../../assets/customer-top.png';
+import topwave from '../../../assets/be-a-merchant-bg.png';
 const brandLogos = [amazon, amazon_vector, casio, moonstar, randstad, star, star_people];
 
 const Brands = () => {
@@ -101,20 +103,16 @@ const Brands = () => {
 
   <div className="border-t-2 border-dotted border-gray-400 w-full my-10"></div>
 
-<div className=' bg-secondary rounded-3xl flex pt-20 w-[1100px] h-[400px] mx-auto'>
-{/* 
-      <svg
-    className="absolute top-0 left-0 w-full"
-    viewBox="0 0 1440 120"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M0,40 C300,120 1100,-40 1440,40 L1440,0 L0,0 Z"
-      fill="white"
-    />
-  </svg> */}
+<div className='relative bg-secondary rounded-3xl flex pt-20 w-[1100px] h-[400px] mx-auto'
+style={{
+    backgroundImage: `url(${topwave})`,
+    backgroundRepeat: "no-repeat",
+      backgroundSize: "100% auto",
+    backgroundPosition: "top"
+}}
+>
 
-    {/* left div */}
+
 <div>
     <h2 className='text-white font-bold text-3xl text-left ml-20'>Merchant and Customer Satisfaction <br /> is Our First Priority</h2>
     <p className='text-white text-left ml-20 mt-5  '>We offer the lowest delivery charge with the highest value along with <br/> 100% safety of your product. Pathao courier delivers your parcels in every <br/> corner of Bangladesh right on time.</p>
@@ -124,7 +122,7 @@ const Brands = () => {
 </div>
 
 <div className='mt-10'>
-    <button className='text-[#CAEB66] border rounded-full w-[180px] h-[40px] font-bold '>Become a Merchant</button>
+    <button className='text-[#CAEB66] border rounded-full w-[225px] h-[40px] font-bold '>Earn with ZapShift Courier</button>
 </div>
 </div>
 
@@ -141,6 +139,16 @@ const Brands = () => {
 
   
 
+</div>
+
+<div>
+   <div>
+    <img src={customertopImg} alt="" className='mx-auto' />
+   </div>
+   <div className='mt-10'>
+    <h2 className='font-bold text-2xl text-center'>What our customers are sayings</h2>
+    <p className='text-center mt-5'>Enhance posture, mobility, and well-being effortlessly with Posture Pro. Achieve proper alignment, reduce <br/> pain, and strengthen your body with ease!</p>
+   </div>
 </div>
 
 </div>
