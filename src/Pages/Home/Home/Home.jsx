@@ -4,6 +4,7 @@ import HowItWorks from '../../../Components/HowItWorks/HowItWorks';
 import OurServices from '../../../Components/OurServices/OurServices';
 import Brands from '../Brands/Brands';
 import Reviews from '../Reviews/Reviews';
+import FAQ from '../FAQ/FAQ';
 
 
 
@@ -27,6 +28,9 @@ const Home = () => {
             </section>
             <section className=''>
                 <Reviews reviewsPromise={reviewsPromise}></Reviews>
+            </section>
+            <section>
+                <FAQ></FAQ>
             </section>
         </div>
     );

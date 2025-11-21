@@ -10,7 +10,10 @@ const RootLayout = () => {
             <Navbar></Navbar>
 
             <Outlet></Outlet>
-            <Footer></Footer>
+            <section className='py-40'>
+                <Footer></Footer>
+            </section>
+            
     
         </div>
     );
