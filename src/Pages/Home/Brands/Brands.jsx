@@ -12,7 +12,7 @@ import star_people from '../../../assets/brands/start_people.png'
 import { Autoplay } from 'swiper/modules';
 import livetrackingImg from '../../../assets/live-tracking.png';
 import safedelivarylogo from '../../../assets/safe-delivery.png';
-
+import locationmerchantlogo from '../../../assets/location-merchant.png';
 const brandLogos = [amazon, amazon_vector, casio, moonstar, randstad, star, star_people];
 
 const Brands = () => {
@@ -44,6 +44,9 @@ const Brands = () => {
         }
         
        </Swiper>
+
+       <div className="border-t-2 border-dotted border-gray-400 w-full my-5 mt-20"></div>
+
 
        {/* card list  */}
 <div className="flex flex-col gap-10 mt-20 w-[1300px]">
@@ -95,6 +98,44 @@ const Brands = () => {
       </p>
     </div>
   </div>
+
+  <div className="border-t-2 border-dotted border-gray-400 w-full my-10"></div>
+
+<div className=' bg-secondary rounded-3xl flex pt-20 w-[1100px] h-[400px] mx-auto'>
+{/* 
+      <svg
+    className="absolute top-0 left-0 w-full"
+    viewBox="0 0 1440 120"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0,40 C300,120 1100,-40 1440,40 L1440,0 L0,0 Z"
+      fill="white"
+    />
+  </svg> */}
+
+    {/* left div */}
+<div>
+    <h2 className='text-white font-bold text-3xl text-left ml-20'>Merchant and Customer Satisfaction <br /> is Our First Priority</h2>
+    <p className='text-white text-left ml-20 mt-5  '>We offer the lowest delivery charge with the highest value along with <br/> 100% safety of your product. Pathao courier delivers your parcels in every <br/> corner of Bangladesh right on time.</p>
+<div className='flex gap-5 ml-20'>
+<div className='mt-10'>
+    <button className='text-black bg-[#CAEB66] rounded-full w-[180px] h-[40px] font-bold '>Become a Merchant</button>
+</div>
+
+<div className='mt-10'>
+    <button className='text-[#CAEB66] border rounded-full w-[180px] h-[40px] font-bold '>Become a Merchant</button>
+</div>
+</div>
+
+</div>
+
+{/* Right div */}
+<div className='w-[400px] h-[300px]'>
+    <img src={locationmerchantlogo} alt="" />
+</div>
+</div>
+
 
 </div>
 
