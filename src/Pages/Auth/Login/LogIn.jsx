@@ -31,7 +31,7 @@ const handleLogin = (data) =>{
       <h3 className='text-3xl text-center font-bold'>Welcome Back</h3>
       <p className='text-center font-bold'>Please Login</p>
       <form className="card-body" onSubmit={handleSubmit(handleLogin)}>
-        <fieldset className="fieldset">
+        <fieldset className="fieldset ">
 
 {/* email field */}
           <label className="label">Email</label>

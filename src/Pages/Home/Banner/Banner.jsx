@@ -8,12 +8,12 @@ import { BsArrowUpRightCircleFill } from 'react-icons/bs';
 
 const Banner = () => {
     return (
-        <Carousel 
+        <Carousel className='mt-5' 
         autoPlay={true}
         infiniteLoop={true}
         interval={1000}
         >
-        <div className='relative  '>
+        <div className='relative   '>
             <img src={bannerImg1} alt="" />
         <div className='absolute bottom-10 left-10 flex items-center gap-2 '>
             <button className=' bg-primary rounded-full w-[150px] h-[40px] font-bold text-black   ' >Track Your Parcel
