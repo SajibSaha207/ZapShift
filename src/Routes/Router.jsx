@@ -26,7 +26,8 @@ index:true,
         },
         {
             path:'sendparcel',
-            element:<PrivateRoutes><SendParcel></SendParcel></PrivateRoutes>
+            element:<PrivateRoutes><SendParcel></SendParcel></PrivateRoutes>,
+             loader: () => fetch('/public/Data/servicecenter.json').then(res => res.json())
         },
         {
             path:''
