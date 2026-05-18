@@ -29,6 +29,9 @@ index:true,
             element:<PrivateRoutes><SendParcel></SendParcel></PrivateRoutes>
         },
         {
+            path:''
+        },
+        {
             path:'coverage',
             Component:Coverage,
             loader: () => fetch('/public/Data/servicecenter.json').then(res => res.json())

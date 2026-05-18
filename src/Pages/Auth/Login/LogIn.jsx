@@ -61,10 +61,13 @@ const handleLogin = (data) =>{
          
           <div><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Login</button>
-          <SocialLogin></SocialLogin>
+          
         </fieldset>
-        <p>Don't have any account? <Link to="/register" className='text-red-400 font-bold' >Register</Link></p>
+      <SocialLogin></SocialLogin>
+       <p>Don't have any account? <Link to="/register" className='text-red-400 font-bold' >Register</Link></p>
       </form>
+      
+      
     </div>
     );
 };
