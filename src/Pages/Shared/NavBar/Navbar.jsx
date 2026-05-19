@@ -23,6 +23,12 @@ const links=<>
  <li><NavLink to="/coverage">Coverage</NavLink></li>
  <li><NavLink to="/sendparcel">Send Parcel</NavLink></li>
 
+
+{
+  user && <>
+  <li><NavLink to="/dashboard/my-parcels">My Parcels</NavLink></li>
+  </>
+}
 </>
 
 
