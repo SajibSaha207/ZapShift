@@ -6,6 +6,7 @@ import { FiEdit } from 'react-icons/fi';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 import { FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router';
 
 const MyParcels = () => {
     const { user } = UseAuth();
@@ -62,6 +63,7 @@ const handleParcelDelete = id =>{
         <th>Name</th>
         <th>Cost</th>
         <th>Payment Status</th>
+        <th>Delivery Status</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -72,7 +74,17 @@ const handleParcelDelete = id =>{
         <th>{index + 1}</th>
         <td>{parcel.parcelName}</td>
         <td>{parcel.cost}</td>
-        <td>Blue</td>
+        <td>
+            {
+                parcel.paymentStatus === 'paid' ?
+                <span className='text-green-400'>Paid</span> :
+                <Link to={`/dashboard/payment/${parcel._id}`}>
+                <button className='btn btn-primary btn-sm text-black'>Pay Now</button>
+                </Link>
+
+            }
+        </td>
+        <td>{parcel.deliveryStatus}</td>
         <td>
             <button className='btn btn-square hover:bg-primary'><FaMagnifyingGlass></FaMagnifyingGlass></button>
             <button  className='btn btn-square hover:bg-primary mx-2'><FiEdit></FiEdit></button>
