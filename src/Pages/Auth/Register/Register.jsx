@@ -4,6 +4,8 @@ import UseAuth from '../../../hocks/UseAuth';
 import { Link, useLocation, useNavigate } from 'react-router';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import axios from 'axios';
+import useAxiosSecure from '../../../hocks/useAxiosSecure';
+import { FaDisplay } from 'react-icons/fa6';
 
 const Register = () => {
 
@@ -11,15 +13,18 @@ const { register, handleSubmit, formState:{errors} } = useForm({mode:"onChange"}
 const {registerUser, updateUserProfile} = UseAuth();
 const location = useLocation();
 const navigate = useNavigate();
+const axiosSecure = useAxiosSecure();
+
+
 const handleRegistration = (data) =>{
-    console.log(data);
+     
 
 const profileImg = data.photo[0];
 
 
 registerUser(data.email, data.password)
 .then(result=>{
-    console.log(result.user);
+     
 
     //store the image
     const formData =new FormData();
@@ -29,27 +34,42 @@ registerUser(data.email, data.password)
     const image_API_URL =`https://api.imgbb.com/1/upload?600&key=${import.meta.env.VITE_image_host_Key}`
 
 
-    axios.post(image_API_URL, formData)
-    .then( res =>{
-        console.log('after image upload', res.data. data.url)
+axios.post(image_API_URL, formData)
+.then(res => {
 
+    const photoURL = res.data.data.url;
+
+    //create user in the database
+     
+    const userInfo = {
+        email: data.email,
+        displayName: data.name,
+        photoURL: photoURL
+    }
+    axiosSecure.post('/users', userInfo)
+    .then(res =>{
+        if(res.data.insetedId){
+            console.log('user created in the database')
+        }
     })
 
-//update profile
-const userProfile ={
-    displayName : data.name,
-    photoURL : res.data.data.url
-}
-updateUserProfile(userProfile)
-.then()
-.catch(error => console.log(error))
-navigate(location.state || '/');
+    const userProfile = {
+        displayName: data.name,
+        photoURL: photoURL
+    };
+
+    return updateUserProfile(userProfile);
 
 })
-.catch(error=>{
-    console.log(error)
+.then(() => {
+    navigate(location.state || '/');
 })
+.catch(error => {
+    console.log(error);
+});
 }
+)}
+
 
     return (
         <div className="card bg-base-100 w-full mx-auto max-w-sm shrink-0 shadow-2xl">

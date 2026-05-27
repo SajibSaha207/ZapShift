@@ -28,7 +28,8 @@ index:true,
             path: 'rider',
             element: <PrivateRoutes>
                 <Rider></Rider>
-            </PrivateRoutes>
+            </PrivateRoutes>,
+            loader: () => fetch('/public/Data/servicecenter.json').then(res => res.json())
         },
         {
             path:'sendparcel',
