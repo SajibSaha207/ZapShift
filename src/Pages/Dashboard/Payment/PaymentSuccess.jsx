@@ -4,7 +4,7 @@ import useAxiosSecure from '../../../hocks/useAxiosSecure';
 
 const PaymentSuccess = () => {
     const [searchParams] = useSearchParams();
-    // const [paymentInfo, setPaymentInfo] = useState({});
+    const [paymentInfo, setPaymentInfo] = useState({});
     const sessionId = searchParams.get('session_id');
     console.log(sessionId);
 
@@ -17,10 +17,10 @@ const PaymentSuccess = () => {
             axiosSecure.patch(`/payment-success?session_id=${sessionId}`)
                 .then(res => {
                     console.log(res.data)
-                    // setPaymentInfo({
-                    //     transactionId: res.data.transactionId,
-                    //     trackingId : res.data.trackingId
-                    // })
+                    setPaymentInfo({
+                        transactionId: res.data.transactionId,
+                        trackingId : res.data.trackingId
+                    })
                 })
         }
 
@@ -29,8 +29,8 @@ const PaymentSuccess = () => {
     return (
         <div>
             <h2 className="text-4xl">Payment successful</h2>
-            {/* <p>Your TransactionId: {paymentInfo.transactionId}</p>
-            <p>Your Parcel Tracking id: {paymentInfo.trackingId}</p> */}
+            <p>Your TransactionId: {paymentInfo.transactionId}</p>
+            <p>Your Parcel Tracking id: {paymentInfo.trackingId}</p>
         </div>
     );
 };
