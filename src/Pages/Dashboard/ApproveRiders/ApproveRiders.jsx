@@ -54,7 +54,8 @@ const ApproveRiders = () => {
         <th className="px-4">Email</th>
         
         <th className="px-4">District</th>
-        <th className="px-4">Status</th>
+        <th className="px-4">Application Status</th>
+        <th className="px-4">Work Status</th>
         <th className="px-4">Action</th>
       </tr>
     </thead>
@@ -78,7 +79,9 @@ const ApproveRiders = () => {
   >
     {rider.status}
   </p>
+ 
 </td>
+ <td>{rider.workStatus}</td>
             <td>
               <button onClick={() =>  (rider)} className="btn"><FaEye></FaEye></button>
                 <button onClick={() => handleApproval(rider)} className="btn"><FaUserCheck></FaUserCheck></button>
