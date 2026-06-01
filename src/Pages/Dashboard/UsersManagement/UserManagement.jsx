@@ -54,6 +54,18 @@ const UserManagement = () => {
                 }
             })
     }
+
+const highlightText = (text, search) => {
+    if (!search || !text) return text;
+    
+    const parts = text.split(new RegExp(`(${search})`, 'gi'));
+    return parts.map((part, index) =>
+        part.toLowerCase() === search.toLowerCase()
+            ? <span key={index} className="bg-yellow-200 text-black font-bold">{part}</span>
+            : part
+    );
+}
+
     return (
         <div>
             <h3 className="text-4xl">Users : {users.length}</h3>
@@ -110,13 +122,14 @@ const UserManagement = () => {
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="font-bold">{user.displayName}</div>
+                                            <div class="font-bold"><td>{highlightText(user.displayName, searchText)}</td></div>
 
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    {user.email}
+                                     <div class="font-bold"><td>{highlightText(user.email, searchText)}</td></div>
+                                    {/* {user.email} */}
                                 </td>
                                 <td>
                                     {user.role}
