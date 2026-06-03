@@ -46,6 +46,14 @@ const DashboardLayout = () => {
         <li>
             <NavLink className="is-drawer-close: tooltip is-drawer-close:tooltip-right" data-tip="Payment History" to='/dashboard/payment-history'><FaRegCreditCard></FaRegCreditCard><span className='is-drawer-close:hidden'>Payment History</span></NavLink>
         </li>
+
+        {/* {
+          role === 'rider' && <>
+           <li>
+            <NavLink className="is-drawer-close: tooltip is-drawer-close:tooltip-right" data-tip="Assigned Deliveries" to='/dashboard/assign-deliveries'><FaMotorcycle></FaMotorcycle><span className='is-drawer-close:hidden'>Assigned Deliveries</span></NavLink>
+        </li>
+          </>
+        } */}
       
         {
           role === 'admin' && <>
