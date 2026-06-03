@@ -4,12 +4,12 @@ import useRole from '../hocks/useRole';
 import ForbiddenAccess from '../Components/ForbiddenAccess';
 
 const RidersRoute = ({children}) => {
-     const { loading} = UseAuth();
+     const { loading, user} = UseAuth();
     const {role, roleLoading} = useRole();
 
-    if(loading || roleLoading){
+    if(loading || !user || roleLoading){
     return <div className='text-center'>
-        <span className="loading loading-spinner text-error  "></span>
+        <span className="loading loading-spinner text-error"></span>
     </div>
    }
 

@@ -20,6 +20,7 @@ import UserManagement from "../Pages/Dashboard/UsersManagement/UserManagement";
 import AdminRoute from "./AdminRoute";
 import AssignRiders from "../Pages/Dashboard/AssignRiders/AssignRiders";
 import AssignedDeliveries from "../Pages/Dashboard/AssignedDeliveries/AssignedDeliveries";
+import RidersRoute from "./RidersRoute";
 
 export const router = createBrowserRouter([
     {
@@ -96,7 +97,7 @@ children:[
 
                 {
                 path: 'assign-deliveries',
-                Component: AssignedDeliveries
+                element: <RidersRoute><AssignedDeliveries></AssignedDeliveries></RidersRoute>
             },
         
 

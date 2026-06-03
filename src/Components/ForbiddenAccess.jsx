@@ -1,4 +1,5 @@
 import React from 'react';
+import Lottie from "react-lottie";
 import ForbiddenAnimation from '../assets/Forbdden.json'
 import { Link } from 'react-router';
  
@@ -12,14 +13,14 @@ const ForbiddenAccess = () => {
                 animationData: ForbiddenAnimation,
             }}
             height = {200}
-            weight = {200}
+            width = {200}
             >
 
             </Lottie>
 
-            <h1 className="text-3xl font-bold text-red-500">You are Forbidden Access This page</h1>
-            <div className='my-3 scpace-x-3'>
-                <Link to ='/' className='btn btn-primary text-blacl'>Home</Link>
+            <h1 className="text-3xl font-bold text-red-500">Access Forbidden</h1>
+            <div className='my-3 space-x-3'>
+                <Link to ='/' className='btn btn-primary text-black'>Home</Link>
             </div>
         </div>
     );
