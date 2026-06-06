@@ -1,21 +1,47 @@
-
-import React from 'react';
-import UseAuth from '../../../hocks/UseAuth';
-import useAxiosSecure from '../../../hocks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
+import React from 'react';
+import useAuth from '../../../hocks/UseAuth';
+import useAxiosSecure from '../../../hocks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 const AssignedDeliveries = () => {
+    const { user } = useAuth();
+    const axiosSecure = useAxiosSecure();
 
-const {user} = UseAuth();
-const axiosSecure = useAxiosSecure();
+    const { data: parcels = [], refetch } = useQuery({
+        queryKey: ['parcels', user.email, 'Rider_assigned'],
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/parcels/rider?riderEmail=${user.email}&deliveryStatus=Rider_assigned`)
 
-const {data:parcels =[]} = useQuery({
-    queryKey: ['parcels', user.email, 'Rider_assigned'],
-    queryFn: async() =>{
-        const res = await axiosSecure.get(`/parcels/rider?.riderEmail=${user.email}&deliveryStatus=Rider_assigned`)
-        return res.data;
+            return res.data;
+        }
+    })
+
+    const handleDeliveryStatusUpdate = (parcel, status) => {
+        const statusInfo = { 
+            deliveryStatus: status, 
+            riderId: parcel.riderId,
+            trackingId: parcel.trackingId
+        }
+
+        let message = `Parcel Status is updated with ${status.split('_').join(' ')}`
+
+        axiosSecure.patch(`/parcels/${parcel._id}/status`, statusInfo)
+            .then(res => {
+                if (res.data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: message,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
     }
-})
+
+
 
     return (
         <div>
@@ -23,37 +49,48 @@ const {data:parcels =[]} = useQuery({
 
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
-                    {/* <!-- head --> */}
+                    {/* head */}
                     <thead>
                         <tr>
                             <th></th>
                             <th>Name</th>
                             <th>Confirm</th>
-                            <th>Paid Time</th>
-                            <th>Transaction Id</th>
+                            <th>Other Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                       {
-                        parcels.map((parcel, index) => <tr key={parcel._id}>
-                            <th>{index + 1}</th>
+                        {parcels.map((parcel, i) => <tr key={parcel._id}>
+                            <th>{i + 1}</th>
                             <td>{parcel.parcelName}</td>
-                            <td className=''>
-                                <button className='btn btn-primary text-black'>Accept</button>
-                                 <button className='btn btn-warning text-black ms-2'>Reject</button>
+                            <td>
+                                {
+                                    parcel.deliveryStatus === 'Rider_assigned'
+                                        ? <>
+                                            <button
+                                                onClick={() => handleDeliveryStatusUpdate(parcel, 'rider_arriving')}
+                                                className='btn btn-primary text-black'>Accept</button>
+                                            <button className='btn btn-warning text-black ms-2'>Reject</button>
+                                        </>
+                                        : <span>Accepted</span>
+                                }
+
                             </td>
                             <td>
-                               
+                                <button
+                                    onClick={() => handleDeliveryStatusUpdate(parcel, 'parcel_picked_up')}
+                                    className='btn btn-primary text-black'>Mark as Picked Up</button>
+                                <button
+                                    onClick={() => handleDeliveryStatusUpdate(parcel, 'parcel_delivered')}
+                                    className='btn btn-primary text-black mx-2'>Mark as Delivered</button>
                             </td>
-                           
-                        </tr>)
-                       }
-                       
-                     
+                        </tr>)}
+
+
                     </tbody>
                 </table>
             </div>
-        </div>
+
+        </div >
     );
 };
 
