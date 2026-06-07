@@ -101,8 +101,9 @@ const MyParcels = () => {
 
                                     }
                                 </td>
-                                <td>{parcel.delivaryStatus}</td>
-                                <td>{parcel.trackingId}</td>
+                               
+                                <td>{parcel.delivaryStatus} </td>
+                                 <td><Link to={`/parcel-track/${parcel.trackingId}`}>{parcel.trackingId}</Link></td>
                                 <td>
                                     <button className='btn btn-square hover:bg-primary'>
                                         <FaMagnifyingGlass />
